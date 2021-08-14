@@ -1,4 +1,4 @@
-# ci-cronjob-example-update-copyright-notice
+# update-copyright-notice-ci-cronjob-example
 
 [![License: LGPL v2.1](https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg)](https://www.gnu.org/licenses/lgpl-2.1)
 
