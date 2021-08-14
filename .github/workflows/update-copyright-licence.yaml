@@ -4,7 +4,13 @@ name: Copyright
 # of the repository. Only then will it run as scheduled. It is also placed in a
 # queue when scheduled, so it may not run exactly at the requested time.
 on:
+  # Trigger using a push for testing purposes; should be removed in practice for
+  # a pure 'cronjob'-type workflow
   push:
+  # Calculated using crontab.guru. See here: https://crontab.guru/#1_0_1_1_*.
+  # Scheduled to run at 00:01 on January 1st of each year.
+  schedule:
+  - cron: '1 0 1 1 *'
 
 jobs:
   update-copyright-notice:
@@ -15,9 +21,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: development
-
-    - name: Download ripgrep
-      run: sudo apt-get install ripgrep
 
     - name: Update copyright notice
       run: ./bin/update_copyright_licence_header.sh
